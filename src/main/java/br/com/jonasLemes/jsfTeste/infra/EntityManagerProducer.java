@@ -10,8 +10,7 @@ import javax.persistence.EntityManagerFactory;
 import org.apache.deltaspike.jpa.api.entitymanager.PersistenceUnitName;
 
 @ApplicationScoped
-public class EntityManagerProducer
-{
+public class EntityManagerProducer{
 
    @Inject
    @PersistenceUnitName("default")
@@ -19,15 +18,12 @@ public class EntityManagerProducer
 
    @Produces
    @RequestScoped
-   protected EntityManager createEntityManager()
-   {
+   protected EntityManager createEntityManager(){
       return entityManagerFactory.createEntityManager();
    }
 
-   public void closeEntityManager(@Disposes EntityManager entityManager)
-   {
-      if (entityManager.isOpen())
-      {
+   public void closeEntityManager(@Disposes EntityManager entityManager) {
+      if (entityManager.isOpen()){
          entityManager.close();
       }
    }
