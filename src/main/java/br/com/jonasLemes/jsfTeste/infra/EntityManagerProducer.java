@@ -13,7 +13,7 @@ import org.apache.deltaspike.jpa.api.entitymanager.PersistenceUnitName;
 public class EntityManagerProducer{
 
    @Inject
-   @PersistenceUnitName("default")
+   @PersistenceUnitName("jsfCrud")
    private EntityManagerFactory entityManagerFactory;
 
    @Produces
